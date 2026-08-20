@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Managing Burnout and Stress in Healthcare | SJC eLearning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ==========================================================================
+   SJC eLearning — Course Flow Page System
+   Shared by all per-course curriculum pages.
+   Palette/type locked to the existing platform design system — do not alter.
+   ========================================================================== */
+
+:root {
+  --primary: #0B5ED7;
+  --secondary: #14B8A6;
+  --accent: #F59E0B;
+  --dark: #1E293B;
+  --bg: #F8FAFC;
+  --card: #FFFFFF;
+  --muted: #64748B;
+  --border: #E2E8F0;
+  --radius: 14px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 48px rgba(11, 94, 215, 0.14);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+}
+
+h1, h2, h3, h4, .display-font {
+  font-family: 'Poppins', sans-serif;
+}
+
+a { text-decoration: none; }
+
+/* ---------- Top bar ---------- */
+.course-topbar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.course-topbar .brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--dark);
+  font-size: 1.05rem;
+}
+.course-topbar .brand span { color: var(--primary); }
+.breadcrumb-trail {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.breadcrumb-trail a { color: var(--muted); }
+.breadcrumb-trail a:hover { color: var(--primary); }
+
+/* ---------- Hero ---------- */
+.course-hero {
+  background: linear-gradient(135deg, var(--dark) 0%, #10233F 55%, var(--primary) 140%);
+  color: #fff;
+  padding: 72px 0 56px;
+  position: relative;
+  overflow: hidden;
+}
+.course-hero::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20,184,166,0.35), transparent 70%);
+}
+.course-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #CBD5E1;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+.course-hero h1 {
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 18px 0 14px;
+}
+.course-hero .lead {
+  color: #CBD5E1;
+  max-width: 640px;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+.hero-meta .pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #E2E8F0;
+}
+.hero-meta .pill i { color: var(--secondary); }
+
+.hero-cta { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-enroll {
+  background: var(--accent);
+  color: #1E293B;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 10px;
+  border: none;
+}
+.btn-enroll:hover { background: #e08e0a; color: #1E293B; }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #fff;
+  font-weight: 500;
+  padding: 12px 22px;
+  border-radius: 10px;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+/* ---------- Section shell ---------- */
+.section { padding: 64px 0; }
+.section-label {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.section h2 { font-weight: 700; margin-top: 8px; }
+.section-sub { color: var(--muted); max-width: 620px; }
+
+/* ---------- Overview cards ---------- */
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+.stat-card i {
+  width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 10px;
+  background: rgba(11,94,215,0.08);
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.stat-card h4 { font-size: 1rem; margin-bottom: 4px; }
+.stat-card p { color: var(--muted); font-size: 0.88rem; margin: 0; }
+
+/* ---------- Flow / curriculum path ---------- */
+.flow-rail {
+  position: relative;
+  padding-left: 46px;
+}
+.flow-rail::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary) 60%, var(--border));
+}
+.flow-module { position: relative; margin-bottom: 18px; }
+.flow-node {
+  position: absolute;
+  left: -46px;
+  top: 18px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2;
+}
+.flow-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.flow-card-header {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+}
+.flow-card-header:hover { background: #F8FBFF; }
+.flow-card-header h3 {
+  font-size: 1.02rem;
+  margin: 0 0 4px;
+}
+.flow-card-header .flow-week-tag {
+  font-size: 0.78rem;
+  color: var(--secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.flow-card-header .chevron {
+  color: var(--muted);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+.flow-card-header[aria-expanded="true"] .chevron { transform: rotate(180deg); color: var(--primary); }
+
+.flow-card-body { padding: 0 22px 22px; }
+.week-block { border-top: 1px dashed var(--border); padding: 16px 0; }
+.week-block:first-child { border-top: none; padding-top: 4px; }
+.week-block .week-label {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+.week-label .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--secondary); }
+.item-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.item-row .tag {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-top: 1px;
+}
+.tag-lecture { background: rgba(11,94,215,0.1); color: var(--primary); }
+.tag-reading { background: rgba(100,116,139,0.12); color: var(--muted); }
+.tag-assignment { background: rgba(245,158,11,0.12); color: #B45309; }
+.tag-activity { background: rgba(20,184,166,0.12); color: #0F766E; }
+.tag-discussion { background: rgba(139,92,246,0.12); color: #6D28D9; }
+.tag-workshop { background: rgba(239,68,68,0.1); color: #B91C1C; }
+.item-row .sub { display: block; color: #94A3B8; font-size: 0.82rem; margin-top: 2px; }
+
+.topic-list { margin: 0; padding-left: 18px; color: var(--muted); font-size: 0.9rem; }
+.topic-list li { margin-bottom: 6px; }
+
+/* ---------- Outcomes / assessment ---------- */
+.outcome-item {
+  display: flex; gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.outcome-item:last-child { border-bottom: none; }
+.outcome-item i { color: var(--secondary); margin-top: 3px; }
+
+.assess-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+.assess-card i { color: var(--primary); font-size: 1.3rem; margin-bottom: 10px; }
+.assess-card h4 { font-size: 0.95rem; margin-bottom: 6px; }
+.assess-card p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+/* ---------- Sticky progress rail (side) ---------- */
+.progress-side {
+  position: sticky;
+  top: 96px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.progress-side h5 { font-size: 0.95rem; margin-bottom: 14px; }
+.progress-side .p-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.83rem;
+  color: var(--muted);
+  padding: 7px 0;
+}
+.progress-side .p-item .num {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700; color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  background: var(--dark);
+  color: #fff;
+  border-radius: 22px;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg, rgba(11,94,215,0.35), transparent 60%);
+}
+.cta-band h3 { font-weight: 700; }
+.cta-band p { color: #CBD5E1; }
+
+/* ---------- Footer ---------- */
+.course-footer {
+  background: var(--dark);
+  color: #94A3B8;
+  padding: 28px 0;
+  font-size: 0.85rem;
+}
+.course-footer a { color: #CBD5E1; }
+
+@media (max-width: 767px) {
+  .course-hero { padding: 56px 0 40px; }
+  .flow-rail { padding-left: 34px; }
+  .flow-node { left: -34px; width: 32px; height: 32px; font-size: 0.75rem; top: 16px; }
+  .cta-band { padding: 32px 22px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="course-topbar py-3">
+  <div class="container d-flex align-items-center justify-content-between flex-wrap gap-2">
+    <a href="index.html" class="brand">SJC <span>eLearning</span></a>
+    <nav class="breadcrumb-trail">
+      <a href="courses.html">Courses</a> <i class="fa-solid fa-chevron-right fa-2xs mx-1"></i> Managing Burnout &amp; Stress
+    </nav>
+  </div>
+</div>
+
+<!-- Hero -->
+<header class="course-hero">
+  <div class="container position-relative">
+    <span class="course-kicker"><i class="fa-solid fa-heart-pulse"></i> Wellbeing &amp; Healthcare</span>
+    <h1 class="display-5">Managing Burnout and Stress in Healthcare</h1>
+    <p class="lead">Practical tools for healthcare professionals to recognize, manage, and mitigate burnout — covering individual stress management, resilience, supportive work culture, organizational change, and mindfulness.</p>
+
+    <div class="hero-meta">
+      <span class="pill"><i class="fa-regular fa-clock"></i> 8-week program · 15 lesson weeks</span>
+      <span class="pill"><i class="fa-solid fa-layer-group"></i> 8 modules</span>
+      <span class="pill"><i class="fa-solid fa-user-nurse"></i> For healthcare professionals</span>
+      <span class="pill"><i class="fa-solid fa-spa"></i> Includes mindfulness practice</span>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#" class="btn btn-enroll">Enroll in this course</a>
+      <a href="#flow" class="btn btn-ghost">See the course flow</a>
+    </div>
+  </div>
+</header>
+
+<!-- Overview -->
+<section class="section pb-3">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-12 col-lg-8">
+        <span class="section-label">Overview</span>
+        <h2 class="h3 mb-3">Course overview</h2>
+        <p class="section-sub mb-0">This course is designed to equip healthcare professionals with the knowledge, tools, and strategies to manage and mitigate burnout and stress. The curriculum covers the psychological, physical, and organizational aspects of stress in the healthcare environment, providing practical approaches to fostering resilience, self-care, and a supportive work culture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Course Flow -->
+<section class="section pt-3" id="flow">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <span class="section-label">Course flow</span>
+        <h2>How the 8 modules progress</h2>
+        <p class="section-sub mb-4">The course moves from understanding and assessing burnout, into individual stress-management skills, resilience and self-care, then into building supportive teams and organizations, mindfulness practice, and a capstone project.</p>
+
+        <div class="flow-rail">
+
+          <!-- Module 1 -->
+          <div class="flow-module">
+            <div class="flow-node">1</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m1" aria-expanded="true">
+                <div><h3>Understanding Burnout and Stress in Healthcare</h3><span class="flow-week-tag">Week 1</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m1">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 1</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Introduction to Burnout and Stress in Healthcare<span class="sub">Definition and symptoms of burnout and stress · Unique stressors in the healthcare environment</span></span></div>
+                    <div class="item-row"><span class="tag tag-reading">Reading</span><span>Articles and research papers on the impact of burnout on healthcare professionals</span></div>
+                    <div class="item-row"><span class="tag tag-discussion">Discussion</span><span>Personal experiences with stress and burnout in the workplace</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 2 -->
+          <div class="flow-module">
+            <div class="flow-node">2</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m2" aria-expanded="true">
+                <div><h3>Identifying and Assessing Burnout and Stress</h3><span class="flow-week-tag">Weeks 2–3</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m2">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 2</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Recognizing the Signs of Burnout and Stress<span class="sub">Physical, emotional, and behavioral indicators · The role of self-assessment and peer assessment</span></span></div>
+                    <div class="item-row"><span class="tag tag-reading">Reading</span><span>Case studies on burnout in healthcare settings</span></div>
+                    <div class="item-row"><span class="tag tag-activity">Activity</span><span>Self-assessment exercise using validated burnout scales (e.g., Maslach Burnout Inventory)</span></div>
+                  </div>
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 3</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Assessing Organizational Risk Factors<span class="sub">Workload, work environment, and organizational culture · Tools and methods for assessing workplace stress</span></span></div>
+                    <div class="item-row"><span class="tag tag-assignment">Assignment</span><span>Conduct a stress risk assessment of your workplace</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="flow-module">
+            <div class="flow-node">3</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m3" aria-expanded="true">
+                <div><h3>Strategies for Individual Stress Management</h3><span class="flow-week-tag">Weeks 4–5</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m3">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 4</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Time Management and Prioritization Techniques<span class="sub">Strategies for efficient workload management · Balancing professional and personal responsibilities</span></span></div>
+                    <div class="item-row"><span class="tag tag-reading">Reading</span><span>Articles on effective time management for healthcare professionals</span></div>
+                    <div class="item-row"><span class="tag tag-activity">Activity</span><span>Develop a personal time management plan</span></div>
+                  </div>
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 5</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Cognitive Behavioral Techniques for Stress Management<span class="sub">Introduction to cognitive-behavioral therapy (CBT) principles · Practical applications of CBT for managing stress</span></span></div>
+                    <div class="item-row"><span class="tag tag-assignment">Assignment</span><span>Practice and document CBT exercises over the week</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 4 -->
+          <div class="flow-module">
+            <div class="flow-node">4</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m4" aria-expanded="true">
+                <div><h3>Building Resilience and Promoting Self-Care</h3><span class="flow-week-tag">Weeks 6–7</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m4">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 6</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>The Importance of Resilience in Healthcare<span class="sub">Defining resilience and its benefits · Building resilience through positive psychology and growth mindset</span></span></div>
+                    <div class="item-row"><span class="tag tag-reading">Reading</span><span>Research on resilience-building in healthcare professionals</span></div>
+                    <div class="item-row"><span class="tag tag-discussion">Discussion</span><span>Sharing strategies and experiences in building personal resilience</span></div>
+                  </div>
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 7</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Self-Care Practices for Healthcare Professionals<span class="sub">Physical, emotional, and mental self-care strategies · The role of hobbies, relaxation, and leisure activities</span></span></div>
+                    <div class="item-row"><span class="tag tag-assignment">Assignment</span><span>Create a personalized self-care plan</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 5 -->
+          <div class="flow-module">
+            <div class="flow-node">5</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m5" aria-expanded="true">
+                <div><h3>Creating a Supportive Work Environment</h3><span class="flow-week-tag">Weeks 8–9</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m5">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 8</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Fostering a Culture of Support and Collaboration<span class="sub">The impact of teamwork and support networks · Strategies for promoting a positive work culture</span></span></div>
+                    <div class="item-row"><span class="tag tag-reading">Reading</span><span>Studies on supportive work environments in healthcare</span></div>
+                    <div class="item-row"><span class="tag tag-discussion">Discussion</span><span>Identifying barriers to a supportive work environment and potential solutions</span></div>
+                  </div>
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 9</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Effective Communication and Conflict Resolution<span class="sub">Techniques for improving communication skills · Addressing and resolving conflicts in the workplace</span></span></div>
+                    <div class="item-row"><span class="tag tag-assignment">Assignment</span><span>Role-play exercises on communication and conflict resolution</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 6 -->
+          <div class="flow-module">
+            <div class="flow-node">6</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m6" aria-expanded="true">
+                <div><h3>Organizational Strategies for Reducing Burnout</h3><span class="flow-week-tag">Weeks 10–11</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m6">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 10</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Organizational Policies and Practices<span class="sub">Developing policies that support employee well-being · Flexible scheduling, workload management, and professional development opportunities</span></span></div>
+                    <div class="item-row"><span class="tag tag-reading">Reading</span><span>Examples of successful organizational interventions in healthcare</span></div>
+                    <div class="item-row"><span class="tag tag-activity">Activity</span><span>Propose a policy or practice change for your organization to reduce burnout</span></div>
+                  </div>
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 11</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Leadership and Management Approaches<span class="sub">The role of leadership in preventing burnout · Training managers to recognize and address burnout and stress</span></span></div>
+                    <div class="item-row"><span class="tag tag-assignment">Assignment</span><span>Develop a leadership action plan for promoting a healthy work environment</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 7 -->
+          <div class="flow-module">
+            <div class="flow-node">7</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m7" aria-expanded="true">
+                <div><h3>Mindfulness and Wellness Practices</h3><span class="flow-week-tag">Weeks 12–13</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m7">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 12</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Introduction to Mindfulness Practices<span class="sub">Benefits of mindfulness for stress reduction · Practical mindfulness exercises (e.g., meditation, breathing techniques)</span></span></div>
+                    <div class="item-row"><span class="tag tag-reading">Reading</span><span>Research on mindfulness in healthcare</span></div>
+                    <div class="item-row"><span class="tag tag-activity">Activity</span><span>Daily mindfulness practice log</span></div>
+                  </div>
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 13</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Integrating Wellness Programs in the Workplace<span class="sub">Designing and implementing wellness programs · Measuring the impact of wellness initiatives</span></span></div>
+                    <div class="item-row"><span class="tag tag-assignment">Assignment</span><span>Plan a wellness program for your department or organization</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 8 -->
+          <div class="flow-module">
+            <div class="flow-node">8</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m8" aria-expanded="true">
+                <div><h3>Capstone Project and Course Wrap-Up</h3><span class="flow-week-tag">Weeks 14–15</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m8">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 14</div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Capstone Project Introduction<span class="sub">Guidelines and expectations for the final project · Choosing a topic related to burnout and stress management</span></span></div>
+                    <div class="item-row"><span class="tag tag-workshop">Workshop</span><span>Project planning and proposal development</span></div>
+                  </div>
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Week 15</div>
+                    <div class="item-row"><span class="tag tag-activity">Activity</span><span>Capstone Project Presentation<span class="sub">Students present their projects to peers and instructors</span></span></div>
+                    <div class="item-row"><span class="tag tag-lecture">Lecture</span><span>Course Review and Next Steps<span class="sub">Recap of key learnings and future applications</span></span></div>
+                    <div class="item-row"><span class="tag tag-assignment">Assignment</span><span>Final project submission and peer review</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sticky progress side -->
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="progress-side">
+          <h5>Module map</h5>
+          <div class="p-item"><span class="num">1</span> Understanding Burnout &amp; Stress</div>
+          <div class="p-item"><span class="num">2</span> Identifying &amp; Assessing Burnout</div>
+          <div class="p-item"><span class="num">3</span> Individual Stress Management</div>
+          <div class="p-item"><span class="num">4</span> Resilience &amp; Self-Care</div>
+          <div class="p-item"><span class="num">5</span> Supportive Work Environment</div>
+          <div class="p-item"><span class="num">6</span> Organizational Strategies</div>
+          <div class="p-item"><span class="num">7</span> Mindfulness &amp; Wellness</div>
+          <div class="p-item"><span class="num">8</span> Capstone Project</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Learning outcomes + Assessment -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <span class="section-label">By the end</span>
+        <h2 class="mb-3">Learning outcomes</h2>
+        <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Understand the causes and symptoms of burnout and stress in healthcare.</span></div>
+        <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Develop strategies for individual stress management and resilience building.</span></div>
+        <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Learn to create supportive and collaborative work environments.</span></div>
+        <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Implement organizational changes to reduce burnout and promote well-being.</span></div>
+        <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Practice mindfulness and wellness techniques to enhance personal and professional health.</span></div>
+      </div>
+      <div class="col-lg-6">
+        <span class="section-label">Assessment</span>
+        <h2 class="mb-3">How you'll be evaluated</h2>
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="assess-card"><i class="fa-solid fa-list-check"></i><h4>Quizzes</h4><p>Periodic quizzes to assess understanding of key concepts.</p></div>
+          </div>
+          <div class="col-6">
+            <div class="assess-card"><i class="fa-solid fa-file-pen"></i><h4>Assignments</h4><p>Practical assignments to apply strategies and tools learned.</p></div>
+          </div>
+          <div class="col-6">
+            <div class="assess-card"><i class="fa-solid fa-comments"></i><h4>Discussions</h4><p>Forum participation to share experiences and solutions.</p></div>
+          </div>
+          <div class="col-6">
+            <div class="assess-card"><i class="fa-solid fa-people-arrows"></i><h4>Peer reviews</h4><p>Constructive feedback on peer assignments to foster collaborative learning.</p></div>
+          </div>
+          <div class="col-12">
+            <div class="assess-card"><i class="fa-solid fa-trophy"></i><h4>Capstone project</h4><p>A comprehensive project that integrates course concepts into a practical application.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="cta-band position-relative">
+      <div class="row align-items-center position-relative">
+        <div class="col-lg-8">
+          <h3 class="mb-2">Ready to start with Module 1?</h3>
+          <p class="mb-0">A holistic path from understanding burnout to building resilience, supportive teams, and sustainable careers. Enroll to unlock the first lesson today.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+          <a href="#" class="btn btn-enroll">Enroll now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="course-footer">
+  <div class="container d-flex flex-wrap justify-content-between gap-2">
+    <span>&copy; SJC Publishers Company Limited — SJC eLearning</span>
+    <a href="courses.html">Back to all courses</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

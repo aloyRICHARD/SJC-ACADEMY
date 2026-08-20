@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Law | SJC eLearning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ==========================================================================
+   SJC eLearning — Course Flow Page System
+   Shared by all per-course curriculum pages.
+   Palette/type locked to the existing platform design system — do not alter.
+   ========================================================================== */
+
+:root {
+  --primary: #0B5ED7;
+  --secondary: #14B8A6;
+  --accent: #F59E0B;
+  --dark: #1E293B;
+  --bg: #F8FAFC;
+  --card: #FFFFFF;
+  --muted: #64748B;
+  --border: #E2E8F0;
+  --radius: 14px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 48px rgba(11, 94, 215, 0.14);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+}
+
+h1, h2, h3, h4, .display-font {
+  font-family: 'Poppins', sans-serif;
+}
+
+a { text-decoration: none; }
+
+/* ---------- Top bar ---------- */
+.course-topbar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.course-topbar .brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--dark);
+  font-size: 1.05rem;
+}
+.course-topbar .brand span { color: var(--primary); }
+.breadcrumb-trail {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.breadcrumb-trail a { color: var(--muted); }
+.breadcrumb-trail a:hover { color: var(--primary); }
+
+/* ---------- Hero ---------- */
+.course-hero {
+  background: linear-gradient(135deg, var(--dark) 0%, #10233F 55%, var(--primary) 140%);
+  color: #fff;
+  padding: 72px 0 56px;
+  position: relative;
+  overflow: hidden;
+}
+.course-hero::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20,184,166,0.35), transparent 70%);
+}
+.course-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #CBD5E1;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+.course-hero h1 {
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 18px 0 14px;
+}
+.course-hero .lead {
+  color: #CBD5E1;
+  max-width: 640px;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+.hero-meta .pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #E2E8F0;
+}
+.hero-meta .pill i { color: var(--secondary); }
+
+.hero-cta { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-enroll {
+  background: var(--accent);
+  color: #1E293B;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 10px;
+  border: none;
+}
+.btn-enroll:hover { background: #e08e0a; color: #1E293B; }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #fff;
+  font-weight: 500;
+  padding: 12px 22px;
+  border-radius: 10px;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+/* ---------- Section shell ---------- */
+.section { padding: 64px 0; }
+.section-label {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.section h2 { font-weight: 700; margin-top: 8px; }
+.section-sub { color: var(--muted); max-width: 620px; }
+
+/* ---------- Overview cards ---------- */
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+.stat-card i {
+  width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 10px;
+  background: rgba(11,94,215,0.08);
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.stat-card h4 { font-size: 1rem; margin-bottom: 4px; }
+.stat-card p { color: var(--muted); font-size: 0.88rem; margin: 0; }
+
+/* ---------- Flow / curriculum path ---------- */
+.flow-rail {
+  position: relative;
+  padding-left: 46px;
+}
+.flow-rail::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary) 60%, var(--border));
+}
+.flow-module { position: relative; margin-bottom: 18px; }
+.flow-node {
+  position: absolute;
+  left: -46px;
+  top: 18px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2;
+}
+.flow-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.flow-card-header {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+}
+.flow-card-header:hover { background: #F8FBFF; }
+.flow-card-header h3 {
+  font-size: 1.02rem;
+  margin: 0 0 4px;
+}
+.flow-card-header .flow-week-tag {
+  font-size: 0.78rem;
+  color: var(--secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.flow-card-header .chevron {
+  color: var(--muted);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+.flow-card-header[aria-expanded="true"] .chevron { transform: rotate(180deg); color: var(--primary); }
+
+.flow-card-body { padding: 0 22px 22px; }
+.week-block { border-top: 1px dashed var(--border); padding: 16px 0; }
+.week-block:first-child { border-top: none; padding-top: 4px; }
+.week-block .week-label {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+.week-label .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--secondary); }
+.item-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.item-row .tag {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-top: 1px;
+}
+.tag-lecture { background: rgba(11,94,215,0.1); color: var(--primary); }
+.tag-reading { background: rgba(100,116,139,0.12); color: var(--muted); }
+.tag-assignment { background: rgba(245,158,11,0.12); color: #B45309; }
+.tag-activity { background: rgba(20,184,166,0.12); color: #0F766E; }
+.tag-discussion { background: rgba(139,92,246,0.12); color: #6D28D9; }
+.tag-workshop { background: rgba(239,68,68,0.1); color: #B91C1C; }
+.item-row .sub { display: block; color: #94A3B8; font-size: 0.82rem; margin-top: 2px; }
+
+.topic-list { margin: 0; padding-left: 18px; color: var(--muted); font-size: 0.9rem; }
+.topic-list li { margin-bottom: 6px; }
+
+/* ---------- Outcomes / assessment ---------- */
+.outcome-item {
+  display: flex; gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.outcome-item:last-child { border-bottom: none; }
+.outcome-item i { color: var(--secondary); margin-top: 3px; }
+
+.assess-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+.assess-card i { color: var(--primary); font-size: 1.3rem; margin-bottom: 10px; }
+.assess-card h4 { font-size: 0.95rem; margin-bottom: 6px; }
+.assess-card p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+/* ---------- Sticky progress rail (side) ---------- */
+.progress-side {
+  position: sticky;
+  top: 96px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.progress-side h5 { font-size: 0.95rem; margin-bottom: 14px; }
+.progress-side .p-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.83rem;
+  color: var(--muted);
+  padding: 7px 0;
+}
+.progress-side .p-item .num {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700; color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  background: var(--dark);
+  color: #fff;
+  border-radius: 22px;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg, rgba(11,94,215,0.35), transparent 60%);
+}
+.cta-band h3 { font-weight: 700; }
+.cta-band p { color: #CBD5E1; }
+
+/* ---------- Footer ---------- */
+.course-footer {
+  background: var(--dark);
+  color: #94A3B8;
+  padding: 28px 0;
+  font-size: 0.85rem;
+}
+.course-footer a { color: #CBD5E1; }
+
+@media (max-width: 767px) {
+  .course-hero { padding: 56px 0 40px; }
+  .flow-rail { padding-left: 34px; }
+  .flow-node { left: -34px; width: 32px; height: 32px; font-size: 0.75rem; top: 16px; }
+  .cta-band { padding: 32px 22px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="course-topbar py-3">
+  <div class="container d-flex align-items-center justify-content-between flex-wrap gap-2">
+    <a href="index.html" class="brand">SJC <span>eLearning</span></a>
+    <nav class="breadcrumb-trail">
+      <a href="courses.html">Courses</a> <i class="fa-solid fa-chevron-right fa-2xs mx-1"></i> Medical Law
+    </nav>
+  </div>
+</div>
+
+<!-- Hero -->
+<header class="course-hero">
+  <div class="container position-relative">
+    <span class="course-kicker"><i class="fa-solid fa-scale-balanced"></i> Health Law &amp; Policy</span>
+    <h1 class="display-5">Medical Law</h1>
+    <p class="lead">An in-depth exploration of the legal principles governing healthcare — patient rights, malpractice, bioethics, public health law, insurance, and the regulation of pharmaceuticals and medical devices.</p>
+
+    <div class="hero-meta">
+      <span class="pill"><i class="fa-regular fa-clock"></i> 12 weeks</span>
+      <span class="pill"><i class="fa-solid fa-layer-group"></i> 8 modules</span>
+      <span class="pill"><i class="fa-solid fa-gavel"></i> Includes mock trial &amp; case studies</span>
+      <span class="pill"><i class="fa-solid fa-book"></i> No formal prerequisites</span>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#" class="btn btn-enroll">Enroll in this course</a>
+      <a href="#flow" class="btn btn-ghost">See the course flow</a>
+    </div>
+  </div>
+</header>
+
+<!-- Overview + Objectives -->
+<section class="section pb-3">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <span class="section-label">Overview</span>
+        <h2 class="h3 mb-3">Course overview</h2>
+        <p class="section-sub mb-0">This course provides an in-depth exploration of the legal principles and issues that govern the healthcare industry. It covers the history and sources of medical law, patient rights, healthcare policies, medical malpractice, ethical issues, and the regulation of pharmaceuticals and medical devices.</p>
+      </div>
+      <div class="col-lg-6">
+        <span class="section-label">By the end</span>
+        <h2 class="h3 mb-3">Learning objectives</h2>
+        <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Understand the foundational concepts and sources of medical law.</span></div>
+        <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Analyze laws and regulations governing patient rights and confidentiality.</span></div>
+        <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Evaluate legal issues related to medical malpractice and healthcare policies.</span></div>
+        <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Discuss ethical dilemmas and regulatory frameworks in medical practice.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Course Flow -->
+<section class="section pt-3" id="flow">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <span class="section-label">Course flow</span>
+        <h2>How the 8 modules progress</h2>
+        <p class="section-sub mb-4">The course moves from the foundations and sources of medical law, through regulation and patient rights, into malpractice and bioethics, then public health law, insurance, and pharmaceutical/device regulation.</p>
+
+        <div class="flow-rail">
+
+          <!-- Module 1 -->
+          <div class="flow-module">
+            <div class="flow-node">1</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m1" aria-expanded="true">
+                <div><h3>Introduction to Medical Law</h3><span class="flow-week-tag">Week 1</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m1">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Topics</div>
+                    <ul class="topic-list">
+                      <li>History and evolution of medical law</li>
+                      <li>Key principles and concepts</li>
+                      <li>Sources of medical law (statutes, case law, regulations)</li>
+                    </ul>
+                  </div>
+                  <div class="item-row"><span class="tag tag-reading">Reading</span><span>Introduction to Medical Law textbook chapters</span></div>
+                  <div class="item-row"><span class="tag tag-lecture">Video lecture</span><span>Overview of Medical Law</span></div>
+                  <div class="item-row"><span class="tag tag-discussion">Discussion forum</span><span>The importance of medical law in healthcare</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 2 -->
+          <div class="flow-module">
+            <div class="flow-node">2</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m2" aria-expanded="true">
+                <div><h3>Healthcare Regulation and Policies</h3><span class="flow-week-tag">Weeks 2–3</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m2">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Topics</div>
+                    <ul class="topic-list">
+                      <li>Overview of health law systems (global and national)</li>
+                      <li>Regulatory bodies (e.g., FDA, EMA)</li>
+                      <li>Key healthcare policies and reforms</li>
+                    </ul>
+                  </div>
+                  <div class="item-row"><span class="tag tag-reading">Reading</span><span>Healthcare policy papers and articles</span></div>
+                  <div class="item-row"><span class="tag tag-lecture">Video lectures</span><span>Healthcare regulation and policy</span></div>
+                  <div class="item-row"><span class="tag tag-assignment">Assignment</span><span>Analyze a major healthcare policy and its impact</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="flow-module">
+            <div class="flow-node">3</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m3" aria-expanded="true">
+                <div><h3>Patient Rights and Confidentiality</h3><span class="flow-week-tag">Weeks 4–5</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m3">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Topics</div>
+                    <ul class="topic-list">
+                      <li>Informed consent</li>
+                      <li>Patient autonomy and rights</li>
+                      <li>Confidentiality and privacy laws (HIPAA, GDPR)</li>
+                    </ul>
+                  </div>
+                  <div class="item-row"><span class="tag tag-workshop">Case study</span><span>Informed consent in practice</span></div>
+                  <div class="item-row"><span class="tag tag-lecture">Video lecture</span><span>Patient confidentiality and privacy</span></div>
+                  <div class="item-row"><span class="tag tag-assignment">Quiz</span><span>Key concepts in patient rights</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 4 -->
+          <div class="flow-module">
+            <div class="flow-node">4</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m4" aria-expanded="true">
+                <div><h3>Medical Malpractice</h3><span class="flow-week-tag">Weeks 6–7</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m4">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Topics</div>
+                    <ul class="topic-list">
+                      <li>Negligence and duty of care</li>
+                      <li>Legal procedures in malpractice claims</li>
+                      <li>Case studies of medical malpractice</li>
+                    </ul>
+                  </div>
+                  <div class="item-row"><span class="tag tag-reading">Reading</span><span>Medical malpractice case law</span></div>
+                  <div class="item-row"><span class="tag tag-lecture">Video lecture</span><span>Understanding medical malpractice</span></div>
+                  <div class="item-row"><span class="tag tag-workshop">Mock trial</span><span>Medical malpractice case simulation</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 5 -->
+          <div class="flow-module">
+            <div class="flow-node">5</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m5" aria-expanded="true">
+                <div><h3>Ethical Issues in Healthcare</h3><span class="flow-week-tag">Weeks 8–9</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m5">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Topics</div>
+                    <ul class="topic-list">
+                      <li>Bioethics</li>
+                      <li>End-of-life decisions</li>
+                      <li>Genetic and reproductive rights</li>
+                    </ul>
+                  </div>
+                  <div class="item-row"><span class="tag tag-reading">Reading</span><span>Ethical dilemmas in healthcare</span></div>
+                  <div class="item-row"><span class="tag tag-lecture">Video lectures</span><span>Bioethics and healthcare</span></div>
+                  <div class="item-row"><span class="tag tag-discussion">Discussion forum</span><span>Ethical issues in medical practice</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 6 -->
+          <div class="flow-module">
+            <div class="flow-node">6</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m6" aria-expanded="true">
+                <div><h3>Public Health Law</h3><span class="flow-week-tag">Week 10</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m6">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Topics</div>
+                    <ul class="topic-list">
+                      <li>Disease control and prevention</li>
+                      <li>Vaccination laws</li>
+                      <li>Emergency health powers</li>
+                    </ul>
+                  </div>
+                  <div class="item-row"><span class="tag tag-workshop">Case study</span><span>Legal response to a public health crisis</span></div>
+                  <div class="item-row"><span class="tag tag-lecture">Video lecture</span><span>Public health law and policy</span></div>
+                  <div class="item-row"><span class="tag tag-assignment">Quiz</span><span>Public health law concepts</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 7 -->
+          <div class="flow-module">
+            <div class="flow-node">7</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m7" aria-expanded="true">
+                <div><h3>Health Insurance and the Law</h3><span class="flow-week-tag">Week 11</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m7">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Topics</div>
+                    <ul class="topic-list">
+                      <li>Insurance regulations</li>
+                      <li>Medicare and Medicaid</li>
+                      <li>Legal issues in health insurance claims</li>
+                    </ul>
+                  </div>
+                  <div class="item-row"><span class="tag tag-reading">Reading</span><span>Health insurance law articles</span></div>
+                  <div class="item-row"><span class="tag tag-lecture">Video lecture</span><span>Health insurance and the law</span></div>
+                  <div class="item-row"><span class="tag tag-assignment">Assignment</span><span>Analyze a health insurance dispute case</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 8 -->
+          <div class="flow-module">
+            <div class="flow-node">8</div>
+            <div class="flow-card">
+              <button class="flow-card-header" data-bs-toggle="collapse" data-bs-target="#m8" aria-expanded="true">
+                <div><h3>Pharmaceutical and Medical Device Law</h3><span class="flow-week-tag">Week 12</span></div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+              </button>
+              <div class="collapse show" id="m8">
+                <div class="flow-card-body">
+                  <div class="week-block">
+                    <div class="week-label"><span class="dot"></span> Topics</div>
+                    <ul class="topic-list">
+                      <li>Drug approval and regulation</li>
+                      <li>Medical device regulations</li>
+                      <li>Liability and safety in pharmaceuticals and devices</li>
+                    </ul>
+                  </div>
+                  <div class="item-row"><span class="tag tag-reading">Reading</span><span>Pharmaceutical regulations and case studies</span></div>
+                  <div class="item-row"><span class="tag tag-lecture">Video lecture</span><span>Regulation of pharmaceuticals and medical devices</span></div>
+                  <div class="item-row"><span class="tag tag-workshop">Final project</span><span>Analyze a pharmaceutical or medical device regulation case</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sticky progress side -->
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="progress-side">
+          <h5>Module map</h5>
+          <div class="p-item"><span class="num">1</span> Introduction to Medical Law</div>
+          <div class="p-item"><span class="num">2</span> Healthcare Regulation &amp; Policies</div>
+          <div class="p-item"><span class="num">3</span> Patient Rights &amp; Confidentiality</div>
+          <div class="p-item"><span class="num">4</span> Medical Malpractice</div>
+          <div class="p-item"><span class="num">5</span> Ethical Issues in Healthcare</div>
+          <div class="p-item"><span class="num">6</span> Public Health Law</div>
+          <div class="p-item"><span class="num">7</span> Health Insurance &amp; the Law</div>
+          <div class="p-item"><span class="num">8</span> Pharmaceutical &amp; Device Law</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prerequisites + Assessment -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <span class="section-label">Before you enroll</span>
+        <h2 class="h3 mb-3">Prerequisites</h2>
+        <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>No formal prerequisites, but a background in healthcare or law may be beneficial.</span></div>
+      </div>
+      <div class="col-lg-8">
+        <span class="section-label">Assessment</span>
+        <h2 class="h3 mb-3">Grading breakdown</h2>
+        <div class="row g-3">
+          <div class="col-6 col-md-3">
+            <div class="assess-card"><i class="fa-solid fa-list-check"></i><h4>Weekly quizzes</h4><p>20% of final grade</p></div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="assess-card"><i class="fa-solid fa-file-lines"></i><h4>Midterm exam</h4><p>20% of final grade</p></div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="assess-card"><i class="fa-solid fa-file-signature"></i><h4>Final exam</h4><p>30% of final grade</p></div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="assess-card"><i class="fa-solid fa-briefcase"></i><h4>Case study project</h4><p>30% of final grade</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Resources + Instructor -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-8">
+        <span class="section-label">Course resources</span>
+        <h2 class="h3 mb-3">What's included</h2>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="assess-card h-100"><i class="fa-solid fa-book"></i><h4>Textbooks</h4>
+              <ul class="topic-list mb-0">
+                <li>"Medical Law and Ethics" by Jonathan Herring</li>
+                <li>"Health Care Law and Ethics" by Mark A. Hall, Ira Mark Ellman, and David Orentlicher</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="assess-card h-100"><i class="fa-solid fa-newspaper"></i><h4>Articles &amp; papers</h4>
+              <p class="mb-0">Selected academic and policy papers relevant to each module.</p>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="assess-card"><i class="fa-solid fa-globe"></i><h4>Online resources</h4>
+              <ul class="topic-list mb-0">
+                <li>Access to legal databases and healthcare law journals</li>
+                <li>Government and regulatory body websites</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <span class="section-label">Instructor</span>
+        <h2 class="h3 mb-3">Who's teaching</h2>
+        <div class="assess-card">
+          <i class="fa-solid fa-user-tie"></i>
+          <h4>Dr. Jane Doe, JD, PhD</h4>
+          <ul class="topic-list mb-0">
+            <li>Expertise in medical law and ethics</li>
+            <li>Extensive experience in healthcare law practice and teaching</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="cta-band position-relative">
+      <div class="row align-items-center position-relative">
+        <div class="col-lg-8">
+          <h3 class="mb-2">Ready to start with Module 1?</h3>
+          <p class="mb-0">Eight modules over twelve weeks — a comprehensive framework blending theory and practical application. Enroll to unlock the first lesson today.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+          <a href="#" class="btn btn-enroll">Enroll now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="course-footer">
+  <div class="container d-flex flex-wrap justify-content-between gap-2">
+    <span>&copy; SJC Publishers Company Limited — SJC eLearning</span>
+    <a href="courses.html">Back to all courses</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
