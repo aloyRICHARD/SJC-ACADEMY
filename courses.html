@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | SJC Academy </title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/courses.css">
+</head>
+
+<body>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SJC <span>Academy</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active-page" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="instructors.html">Instructors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn-nav-cta" href="signup.html">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <header class="courses-hero">
+        <div class="container">
+            <div class="eyebrow" data-aos="fade-up">Course Catalog</div>
+            <h1 data-aos="fade-up" data-aos-delay="80">Browse every course on Scholars Flow</h1>
+            <p class="lead-text" data-aos="fade-up" data-aos-delay="140">
+                Fourteen practitioner-built courses spanning health, leadership, data and research —
+                designed for learners working across Africa's institutions.
+            </p>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+                <div>
+                    <div class="stat-num">14</div>
+                    <div class="stat-label">Courses</div>
+                </div>
+                <div>
+                    <div class="stat-num">3</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div>
+                    <div class="stat-num">100%</div>
+                    <div class="stat-label">Self-paced</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ TOOLBAR (search + filters) ============ -->
+    <div class="container">
+        <div class="courses-toolbar" data-aos="fade-up">
+            <div class="row g-3 align-items-center">
+                <div class="col-lg-5">
+                    <div class="search-input-wrap">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" class="search-input" id="searchInput"
+                            placeholder="Search courses by title or topic…">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex flex-wrap gap-2 justify-content-lg-end" id="filterChips">
+                        <button class="filter-chip active" data-filter="all">All <span class="count">14</span></button>
+                        <button class="filter-chip" data-filter="health">Health &amp; Medicine <span class="count">5</span></button>
+                        <button class="filter-chip" data-filter="leadership">Leadership &amp; Business <span class="count">5</span></button>
+                        <button class="filter-chip" data-filter="data">Data &amp; Research <span class="count">4</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ COURSE GRID ============ -->
+    <section class="courses-section">
+        <div class="container">
+            <p class="results-meta" id="resultsMeta">Showing 14 of 14 courses</p>
+
+            <div class="row g-4" id="courseGrid">
+
+                <!-- Health & Medicine -->
+                <div class="col-md-6 col-lg-4 course-item" data-category="health"
+                    data-title="clinical dermatology skin disease diagnosis treatment">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-health">
+                            <i class="fa-solid fa-stethoscope"></i>
+                            <span class="doc-badge">Health</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-health">Health &amp; Medicine</span>
+                            <h3 class="course-title">Clinical Dermatology</h3>
+                            <p class="course-desc">A practitioner's guide to recognising, diagnosing and managing
+                                common skin conditions in everyday clinical practice.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>6 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Intermediate</span>
+                            </div>
+                            <a href="/courses html/clinical-dermatology.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4 course-item" data-category="health"
+                    data-title="medical law healthcare regulation ethics">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-health">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                            <span class="doc-badge">Health</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-health">Health &amp; Medicine</span>
+                            <h3 class="course-title">Medical Law</h3>
+                            <p class="course-desc">The legal framework every health professional works within —
+                                consent, liability, patient rights and regulatory compliance.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>5 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Intermediate</span>
+                            </div>
+                            <a href="/courses html/medical-law.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4 course-item" data-category="health"
+                    data-title="politics public health policy governance">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-health">
+                            <i class="fa-solid fa-landmark"></i>
+                            <span class="doc-badge">Health</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-health">Health &amp; Medicine</span>
+                            <h3 class="course-title">Politics in Public Health</h3>
+                            <p class="course-desc">How policy, power and governance shape health outcomes — and
+                                what practitioners need to know to navigate that system.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>6 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Advanced</span>
+                            </div>
+                            <a href="/courses html/politics-public-health.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4 course-item" data-category="health"
+                    data-title="public health entrepreneurship startups innovation">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-health">
+                            <i class="fa-solid fa-briefcase-medical"></i>
+                            <span class="doc-badge">Health</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-health">Health &amp; Medicine</span>
+                            <h3 class="course-title">Public Health Entrepreneurship</h3>
+                            <p class="course-desc">Turning public health ideas into sustainable ventures — from
+                                problem framing to funding and scale.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>7 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Intermediate</span>
+                            </div>
+                            <a href="/courses html/public-health-entrepreneurship.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4 course-item" data-category="health"
+                    data-title="arts in healing therapy wellbeing creative">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-health">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                            <span class="doc-badge">Health</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-health">Health &amp; Medicine</span>
+                            <h3 class="course-title">Arts in Healing Development</h3>
+                            <p class="course-desc">Using creative and expressive practice as a therapeutic tool —
+                                grounded in real community health settings.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>5 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Beginner</span>
+                            </div>
+                            <a href="/courses html/arts-in-healing_1.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Leadership & Business -->
+                <div class="col-md-6 col-lg-4 course-item" data-category="leadership"
+                    data-title="crafting success soft skills communication teamwork">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-leadership">
+                            <i class="fa-solid fa-handshake"></i>
+                            <span class="doc-badge">Leadership</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-leadership">Leadership &amp; Business</span>
+                            <h3 class="course-title">Program for Crafting Success (Soft Skills)</h3>
+                            <p class="course-desc">The interpersonal skills that separate good employees from
+                                indispensable ones — communication, teamwork and professionalism.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>8 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Beginner</span>
+                            </div>
+                            <a href="/courses html/crafting-success-soft-skills.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4 course-item" data-category="leadership"
+                    data-title="entrepreneurial leadership africa business startup">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-leadership">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <span class="doc-badge">Leadership</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-leadership">Leadership &amp; Business</span>
+                            <h3 class="course-title">Entrepreneurial Leadership in Africa</h3>
+                            <p class="course-desc">Leading ventures through the specific constraints and
+                                opportunities of African markets — capital, culture and context.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>7 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Intermediate</span>
+                            </div>
+                            <a href="/courses html/entrepreneurial-leadership-africa.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4 course-item" data-category="leadership"
+                    data-title="managing burnout stress workload wellbeing">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-leadership">
+                            <i class="fa-solid fa-spa"></i>
+                            <span class="doc-badge">Leadership</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-leadership">Leadership &amp; Business</span>
+                            <h3 class="course-title">Managing Burnout, Workload &amp; Stress</h3>
+                            <p class="course-desc">Practical strategies for recognising burnout early and
+                                building sustainable work habits, for yourself and your team.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>5 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Beginner</span>
+                            </div>
+                            <a href="/courses html/managing-burnout-stress.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4 course-item" data-category="leadership"
+                    data-title="negotiating influence power africa">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-leadership">
+                            <i class="fa-solid fa-comments"></i>
+                            <span class="doc-badge">Leadership</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-leadership">Leadership &amp; Business</span>
+                            <h3 class="course-title">Negotiating &amp; Applying Influence and Power in Africa</h3>
+                            <p class="course-desc">Reading power dynamics and negotiating effectively across the
+                                cultural and institutional realities of African organisations.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>6 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Advanced</span>
+                            </div>
+                            <a href="/courses html/negotiating-influence-power-africa.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4 course-item" data-category="leadership"
+                    data-title="people analytics leadership africa hr data">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-leadership">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span class="doc-badge">Leadership</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-leadership">Leadership &amp; Business</span>
+                            <h3 class="course-title">Leading People Using People Analytics</h3>
+                            <p class="course-desc">Using workforce data to make better people decisions — hiring,
+                                retention and performance, backed by evidence.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>6 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Intermediate</span>
+                            </div>
+                            <a href="/courses html/people-analytics-leadership-africa.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Data & Research -->
+                <div class="col-md-6 col-lg-4 course-item" data-category="data"
+                    data-title="data analysis basics advanced statistics">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-data">
+                            <i class="fa-solid fa-chart-bar"></i>
+                            <span class="doc-badge">Data</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-data">Data &amp; Research</span>
+                            <h3 class="course-title">Data Analysis: Basics to Advanced</h3>
+                            <p class="course-desc">A full progression from spreadsheet fundamentals to applied
+                                statistical analysis, built around real datasets.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>9 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Beginner to Advanced</span>
+                            </div>
+                            <a href="/courses html/data-analysis_1.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4 course-item" data-category="data"
+                    data-title="visualizing uganda westernization protest modernity">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-data">
+                            <i class="fa-solid fa-earth-africa"></i>
+                            <span class="doc-badge">Data</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-data">Data &amp; Research</span>
+                            <h3 class="course-title">Visualizing Uganda</h3>
+                            <p class="course-desc">Westernization, protest and modernity in Uganda, examined
+                                through data, imagery and visual storytelling.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>6 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Intermediate</span>
+                            </div>
+                            <a href="/courses html/visualizing-uganda.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4 course-item" data-category="data"
+                    data-title="science writing communication research">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-data">
+                            <i class="fa-solid fa-pen-nib"></i>
+                            <span class="doc-badge">Data</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-data">Data &amp; Research</span>
+                            <h3 class="course-title">Science Writing &amp; Communication</h3>
+                            <p class="course-desc">Turning technical and scientific findings into writing that
+                                non-specialists can actually read and act on.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>6 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Intermediate</span>
+                            </div>
+                            <a href="/courses html/science-writing-communication.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4 course-item" data-category="data"
+                    data-title="critical thinking decision making">
+                    <article class="course-card" data-aos="fade-up">
+                        <div class="course-thumb thumb-data">
+                            <i class="fa-solid fa-brain"></i>
+                            <span class="doc-badge">Data</span>
+                        </div>
+                        <div class="course-body">
+                            <span class="cat-tag cat-data">Data &amp; Research</span>
+                            <h3 class="course-title">Critical Thinking &amp; Decision-Making</h3>
+                            <p class="course-desc">A structured approach to reasoning through ambiguous problems
+                                and making sound decisions under uncertainty.</p>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i>5 modules</span>
+                                <span><i class="fa-solid fa-signal"></i>Beginner</span>
+                            </div>
+                            <a href="/courses html/critical-thinking-decision-making.html" class="btn-view">View Course</a>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+
+            <div class="no-results" id="noResults">
+                <i class="fa-solid fa-folder-open"></i>
+                <p class="mb-0 fw-semibold">No courses match your search.</p>
+                <p>Try a different keyword or clear the filter.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>SJC Academy</h5>
+                    <p>Practitioner-built professional development courses for learners across Africa, published by SJC
+                        Publishers.</p>
+                </div>
+                <div class="col-md-2 col-6">
+                    <h5>Explore</h5>
+                    <p><a href="courses.html">All Courses</a></p>
+                    <p><a href="categories.html">Categories</a></p>
+                    <p><a href="instructors.html">Instructors</a></p>
+                </div>
+                <div class="col-md-2 col-6">
+                    <h5>Account</h5>
+                    <p><a href="login.html">Log In</a></p>
+                    <p><a href="signup.html">Sign Up</a></p>
+                    <p><a href="dashboard.html">Dashboard</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Get in touch</h5>
+                    <p><a href="contact.html">Contact support</a></p>
+                    <p><a href="faq.html">FAQs</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                &copy; 2026 SJC Publishers Company Limited. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 600, once: true });
+
+        const searchInput = document.getElementById('searchInput');
+        const chips = document.querySelectorAll('.filter-chip');
+        const items = document.querySelectorAll('.course-item');
+        const resultsMeta = document.getElementById('resultsMeta');
+        const noResults = document.getElementById('noResults');
+        let activeCategory = 'all';
+
+        function applyFilters() {
+            const query = searchInput.value.trim().toLowerCase();
+            let visible = 0;
+
+            items.forEach(item => {
+                const matchesCategory = activeCategory === 'all' || item.dataset.category === activeCategory;
+                const matchesSearch = item.dataset.title.includes(query);
+                const show = matchesCategory && matchesSearch;
+                item.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            resultsMeta.textContent = `Showing ${visible} of ${items.length} courses`;
+            noResults.style.display = visible === 0 ? 'block' : 'none';
+        }
+
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                activeCategory = chip.dataset.filter;
+                applyFilters();
+            });
+        });
+
+        searchInput.addEventListener('input', applyFilters);
+    </script>
+
+</body>
+
+</html>

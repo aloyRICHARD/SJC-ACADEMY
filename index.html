@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJC Academy</title>
+    <meta name="description"
+        content="SJC Publishers Company Limited — premium online courses, learning paths and certifications from world-class instructors.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <!-- AOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- Swiper -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.4/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Site CSS — load order matters: base styles first, motion layer second -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/animations.css">
+</head>
+
+<body>
+
+
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+        <div class="container-xl">
+            <div class="navbar-inner">
+                <a href="index.html" class="brand">
+                    <span class="brand-mark"><i class="fa-solid fa-book-open"></i></span>
+                    <span>SJC Publishers<small>Academy</small></span>
+                </a>
+
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li class="has-mega">
+                        <a href="courses.html">Courses <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-col">
+                                <h6>Categories</h6>
+                                <a href="categories.html">Medicine &amp; Health</a>
+                                <a href="categories.html">Business &amp; Publishing</a>
+                                <a href="categories.html">Technology</a>
+                                <a href="categories.html">Academic Writing</a>
+                            </div>
+                            <div class="mega-col">
+                                <h6>Learning Paths</h6>
+                                <a href="courses.html">Clinical Research Track</a>
+                                <a href="courses.html">Editorial Skills Track</a>
+                                <a href="courses.html">Digital Publishing Track</a>
+                            </div>
+                            <div class="mega-col">
+                                <h6>Discover</h6>
+                                <a href="instructors.html">Top Instructors</a>
+                                <a href="pricing.html">Membership Plans</a>
+                                <a href="certificates.html">Certificates</a>
+                            </div>
+                            <div class="mega-col">
+                                <h6>Resources</h6>
+                                <a href="contact.html" target="_self">Contact Us</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="instructors.html" target="_self">Instructors</a></li>
+                    <li><a href="pricing.html" target="_self">Pricing</a></li>
+                    <li><a href="about.html" target="_self">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-outline btn-sm d-none d-lg-inline-flex">Log In</a>
+                    <a href="signup.html" class="btn btn-primary btn-sm d-none d-lg-inline-flex">Get Started</a>
+                    <button class="nav-toggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile panel -->
+    <div class="mobile-overlay"></div>
+    <nav class="mobile-panel">
+        <button class="mobile-panel-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="instructors.html">Instructors</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="d-flex gap-2 mt-4">
+            <a href="login.html" class="btn btn-outline btn-sm flex-fill">Log In</a>
+            <a href="signup.html" class="btn btn-primary btn-sm flex-fill">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+        <div class="container-xl">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-badge" data-aos="fade-up"><span class="dot"></span> Trusted by 40,000+
+                        professionals worldwide</div>
+                    <h1 data-aos="fade-up" data-aos-delay="80">
+                        Publish your potential.<br>
+                        Master <span class="type-target accent-word"
+                            data-words='["clinical research.","medical writing.","digital publishing.","academic editing."]'>Research</span><span
+                            class="type-cursor">&nbsp;</span>
+                    </h1>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="140">
+                        SJC Publishers brings the rigor of scholarly publishing to online learning — expert-authored
+                        courses, peer-reviewed content, and certificates that carry real weight.
+                    </p>
+                    <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
+                        <a href="courses.html" class="btn btn-primary">Explore Courses <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#" class="hero-play" data-bs-toggle="modal" data-bs-target="#introVideoModal">
+                            <span class="play-circle"><i class="fa-solid fa-play"></i></span> Watch how it works
+                        </a>
+                    </div>
+                    <form class="hero-search" data-aos="fade-up" data-aos-delay="240" role="search">
+                        <i class="fa-solid fa-magnifying-glass ms-3 text-secondary"></i>
+                        <input type="search" placeholder="Search 'peer review', 'editing', 'biostatistics'..."
+                            aria-label="Search courses">
+                        <button type="submit" class="btn btn-primary btn-sm">Search</button>
+                    </form>
+                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="280">
+                        <div class="stat">
+                            <h3><span class="count-up" data-count="320">0</span>+</h3><span>Expert Courses</span>
+                        </div>
+                        <div class="stat">
+                            <h3><span class="count-up" data-count="180">0</span>+</h3><span>Instructors</span>
+                        </div>
+                        <div class="stat">
+                            <h3><span class="count-up" data-count="97" data-suffix="%">0</span></h3>
+                            <span>Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual" data-aos="fade-left" data-aos-delay="120">
+                    <div class="main-card">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=80"
+                            alt="Learner studying on a laptop with course materials">
+                    </div>
+                    <div class="floating-card card-progress">
+                        <span class="fc-icon"><i class="fa-solid fa-chart-line"></i></span>
+                        <div><strong>82% Complete</strong><span>Biostatistics 101</span></div>
+                    </div>
+                    <div class="floating-card card-cert">
+                        <span class="fc-icon"><i class="fa-solid fa-award"></i></span>
+                        <div><strong>Certificate Earned</strong><span>Medical Editing</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CATEGORIES ============ -->
+    <section class="section">
+        <div class="container-xl">
+            <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 section-head" data-aos="fade-up">
+                <div>
+                    <div class="eyebrow">Browse by subject</div>
+                    <h2>Popular categories</h2>
+                </div>
+                <a href="categories.html" class="btn btn-outline btn-sm">View all categories</a>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="category-card card-surface h-100">
+                        <span class="cat-icon"><i class="fa-solid fa-stethoscope"></i></span>
+                        <h5>Medicine &amp; Health</h5>
+                        <p>86 courses</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+                    <div class="category-card card-surface h-100">
+                        <span class="cat-icon" style="background:var(--gradient-warm)"><i
+                                class="fa-solid fa-pen-nib"></i></span>
+                        <h5>Editorial &amp; Publishing</h5>
+                        <p>64 courses</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+                    <div class="category-card card-surface h-100">
+                        <span class="cat-icon" style="background:linear-gradient(135deg,#14B8A6,#0B5ED7)"><i
+                                class="fa-solid fa-chart-simple"></i></span>
+                        <h5>Research &amp; Statistics</h5>
+                        <p>52 courses</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+                    <div class="category-card card-surface h-100">
+                        <span class="cat-icon" style="background:linear-gradient(135deg,#F59E0B,#0B5ED7)"><i
+                                class="fa-solid fa-laptop-code"></i></span>
+                        <h5>Digital &amp; Technology</h5>
+                        <p>71 courses</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FEATURED COURSES ============ -->
+    <section class="section bg-alt">
+        <div class="container-xl">
+            <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 section-head" data-aos="fade-up">
+                <div>
+                    <div class="eyebrow">Editor's picks</div>
+                    <h2>Featured courses</h2>
+                </div>
+                <a href="courses.html" class="btn btn-outline btn-sm">Browse all courses</a>
+            </div>
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                    <div class="course-card card-surface h-100">
+                        <div class="course-thumb">
+                            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=500&q=80"
+                                alt="Biostatistics course thumbnail">
+                            <span class="course-badge">Bestseller</span>
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <div class="course-body">
+                            <span class="course-cat">Research</span>
+                            <h5><a href="course-details.html">Applied Biostatistics for Health Researchers</a></h5>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i> 8h 20m</span>
+                                <span class="course-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price"><del>$129</del>$79</span>
+                                <div class="instructor-mini">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+                    <div class="course-card card-surface h-100">
+                        <div class="course-thumb">
+                            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=500&q=80"
+                                alt="Medical writing course thumbnail">
+                            <span class="course-badge">New</span>
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <div class="course-body">
+                            <span class="course-cat">Publishing</span>
+                            <h5><a href="course-details.html">Medical Writing &amp; Manuscript Editing</a></h5>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i> 6h 05m</span>
+                                <span class="course-rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">$89</span>
+                                <div class="instructor-mini">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+                    <div class="course-card card-surface h-100">
+                        <div class="course-thumb">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&q=80"
+                                alt="Peer review course thumbnail">
+                            <span class="course-badge">Popular</span>
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <div class="course-body">
+                            <span class="course-cat">Editorial</span>
+                            <h5><a href="course-details.html">Mastering the Peer Review Process</a></h5>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i> 4h 40m</span>
+                                <span class="course-rating"><i class="fa-solid fa-star"></i> 4.7</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">$59</span>
+                                <div class="instructor-mini">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+                    <div class="course-card card-surface h-100">
+                        <div class="course-thumb">
+                            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&q=80"
+                                alt="Data visualization course thumbnail">
+                            <span class="course-badge">Bestseller</span>
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <div class="course-body">
+                            <span class="course-cat">Technology</span>
+                            <h5><a href="course-details.html">Data Visualization for Publishers</a></h5>
+                            <div class="course-meta">
+                                <span><i class="fa-regular fa-clock"></i> 5h 15m</span>
+                                <span class="course-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">$69</span>
+                                <div class="instructor-mini">
+                                    <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ LEARNING PATHS ============ -->
+    <section class="section">
+        <div class="container-xl">
+            <div class="section-head center mx-auto" data-aos="fade-up">
+                <div class="eyebrow mx-auto">Structured tracks</div>
+                <h2>Learning paths, chaptered like a book</h2>
+                <p>Each path is organized into folios — sequential chapters that build on one another, the way a
+                    manuscript is structured.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card-surface h-100 p-4">
+                        <span class="folio">Path 01</span>
+                        <h5 class="mt-2 mb-2">Clinical Research Track</h5>
+                        <p class="text-body-secondary small mb-3">From protocol design to publication — 9 courses, 32
+                            hours.</p>
+                        <a href="courses.html" class="btn btn-sm btn-outline">View path</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+                    <div class="card-surface h-100 p-4">
+                        <span class="folio">Path 02</span>
+                        <h5 class="mt-2 mb-2">Editorial Skills Track</h5>
+                        <p class="text-body-secondary small mb-3">Copyediting, peer review and journal management — 7
+                            courses.</p>
+                        <a href="courses.html" class="btn btn-sm btn-outline">View path</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+                    <div class="card-surface h-100 p-4">
+                        <span class="folio">Path 03</span>
+                        <h5 class="mt-2 mb-2">Digital Publishing Track</h5>
+                        <p class="text-body-secondary small mb-3">Open access, metadata and digital distribution — 8
+                            courses.</p>
+                        <a href="courses.html" class="btn btn-sm btn-outline">View path</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TOP INSTRUCTORS ============ -->
+    <section class="section bg-alt">
+        <div class="container-xl">
+            <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 section-head" data-aos="fade-up">
+                <div>
+                    <div class="eyebrow">Learn from the best</div>
+                    <h2>Top instructors</h2>
+                </div>
+                <a href="instructors.html" class="btn btn-outline btn-sm">Meet all instructors</a>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-lg-3" data-aos="fade-up">
+                    <div class="instructor-card card-surface h-100">
+                        <div class="avatar"><img src="https://randomuser.me/api/portraits/women/65.jpg"
+                                alt="Dr. Amara Chen"></div>
+                        <h5>Dr. Amara Chen</h5>
+                        <div class="role">Epidemiology</div>
+                        <div class="stat-row">
+                            <div><strong>18k</strong>Students</div>
+                            <div><strong>4.9</strong>Rating</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+                    <div class="instructor-card card-surface h-100">
+                        <div class="avatar"><img src="https://randomuser.me/api/portraits/men/45.jpg"
+                                alt="Prof. David Okoye">
+                        </div>
+                        <h5>Prof. David Okoye</h5>
+                        <div class="role">Medical Writing</div>
+                        <div class="stat-row">
+                            <div><strong>12k</strong>Students</div>
+                            <div><strong>4.8</strong>Rating</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+                    <div class="instructor-card card-surface h-100">
+                        <div class="avatar"><img src="https://randomuser.me/api/portraits/women/22.jpg"
+                                alt="Dr. Priya Nair"></div>
+                        <h5>Dr. Priya Nair</h5>
+                        <div class="role">Biostatistics</div>
+                        <div class="stat-row">
+                            <div><strong>21k</strong>Students</div>
+                            <div><strong>4.9</strong>Rating</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+                    <div class="instructor-card card-surface h-100">
+                        <div class="avatar"><img src="https://randomuser.me/api/portraits/men/85.jpg"
+                                alt="Dr. Samuel Otieno"></div>
+                        <h5>Dr. Samuel Otieno</h5>
+                        <div class="role">Publication Ethics</div>
+                        <div class="stat-row">
+                            <div><strong>9k</strong>Students</div>
+                            <div><strong>4.7</strong>Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section">
+        <div class="container-xl">
+            <div class="section-head center mx-auto" data-aos="fade-up">
+                <div class="eyebrow mx-auto">Reader reviews</div>
+                <h2>What our learners say</h2>
+            </div>
+            <div class="swiper testimonial-swiper" data-aos="fade-up">
+                <div class="swiper-wrapper pb-5">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card card-surface h-100">
+                            <div class="quote-mark">&ldquo;</div>
+                            <p>The Clinical Research Track gave me the exact structure my thesis committee wanted. It
+                                reads like a well-edited textbook, not a slide deck.</p>
+                            <div class="person">
+                                <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="">
+                                <div><strong>Fatima Al-Sayed</strong><span>PhD Candidate</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card card-surface h-100">
+                            <div class="quote-mark">&ldquo;</div>
+                            <p>I finally understand peer review from the editor's side. The certificate helped me land a
+                                journal reviewer role within two months.</p>
+                            <div class="person">
+                                <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="">
+                                <div><strong>James Mwangi</strong><span>Research Associate</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card card-surface h-100">
+                            <div class="quote-mark">&ldquo;</div>
+                            <p>Dense material made genuinely enjoyable. The dashboard keeps me honest about my progress
+                                every week.</p>
+                            <div class="person">
+                                <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="">
+                                <div><strong>Elena Popescu</strong><span>Clinical Coordinator</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="section-sm">
+        <div class="container-xl">
+            <div class="stats-strip" data-aos="zoom-in">
+                <div class="row text-center">
+                    <div class="col-6 col-lg-3 stat mb-4 mb-lg-0">
+                        <h3><span class="count-up" data-count="320">0</span>+</h3><span>Courses published</span>
+                    </div>
+                    <div class="col-6 col-lg-3 stat mb-4 mb-lg-0">
+                        <h3><span class="count-up" data-count="41000" data-suffix="+">0</span></h3><span>Active
+                            learners</span>
+                    </div>
+                    <div class="col-6 col-lg-3 stat">
+                        <h3><span class="count-up" data-count="180">0</span>+</h3><span>Expert instructors</span>
+                    </div>
+                    <div class="col-6 col-lg-3 stat">
+                        <h3><span class="count-up" data-count="27">0</span></h3><span>Countries reached</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PARTNERS ============ -->
+    <section class="section-sm">
+        <div class="container-xl">
+            <p class="text-center text-body-secondary small mb-4" data-aos="fade-up">Trusted by teams and institutions
+                worldwide</p>
+            <div class="partners-row" data-aos="fade-up">
+                <span class="partner-name">MedCore Institute</span>
+                <span class="partner-name">Helios Health</span>
+                <span class="partner-name">Northbridge Journals</span>
+                <span class="partner-name">Alden Research Group</span>
+                <span class="partner-name">Cascade University</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ LATEST ARTICLES ============ -->
+    <section class="section bg-alt">
+        <div class="container-xl">
+            <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 section-head" data-aos="fade-up">
+                <div>
+                    <div class="eyebrow">From the journal</div>
+                    <h2>Latest articles</h2>
+                </div>
+                <a href="blog.html" class="btn btn-outline btn-sm">Visit the blog</a>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card-surface h-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=500&q=80"
+                            alt="Article on peer review" style="height:180px;object-fit:cover;width:100%;">
+                        <div class="p-4">
+                            <span class="badge-soft">Editorial</span>
+                            <h5 class="mt-3"><a href="article.html">5 Ways to Streamline Your Peer Review Workflow</a>
+                            </h5>
+                            <p class="text-body-secondary small mb-0">6 min read · July 12, 2026</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+                    <div class="card-surface h-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80"
+                            alt="Article on data" style="height:180px;object-fit:cover;width:100%;">
+                        <div class="p-4">
+                            <span class="badge-soft teal">Research</span>
+                            <h5 class="mt-3"><a href="article.html">Reading Statistical Significance the Right Way</a>
+                            </h5>
+                            <p class="text-body-secondary small mb-0">8 min read · July 3, 2026</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+                    <div class="card-surface h-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&q=80"
+                            alt="Article on writing" style="height:180px;object-fit:cover;width:100%;">
+                        <div class="p-4">
+                            <span class="badge-soft amber">Writing</span>
+                            <h5 class="mt-3"><a href="article.html">A Copyeditor's Checklist for Clinical
+                                    Manuscripts</a></h5>
+                            <p class="text-body-secondary small mb-0">5 min read · June 28, 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PRICING PREVIEW ============ -->
+    <section class="section">
+        <div class="container-xl">
+            <div class="section-head center mx-auto" data-aos="fade-up">
+                <div class="eyebrow mx-auto">Membership</div>
+                <h2>Simple, transparent pricing</h2>
+                <p>Choose the plan that fits how you learn. Switch or cancel anytime.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="pricing-card card-surface h-100">
+                        <div class="plan-name">Starter</div>
+                        <div class="plan-price">$19<span>/mo</span></div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Access to 50+ courses</li>
+                            <li><i class="fa-solid fa-check"></i> Certificates of completion</li>
+                            <li><i class="fa-solid fa-check"></i> Community forum access</li>
+                        </ul>
+                        <a href="pricing.html" class="btn btn-outline btn-block">Choose Starter</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+                    <div class="pricing-card card-surface featured h-100">
+                        <span class="plan-tag">Most popular</span>
+                        <div class="plan-name">Professional</div>
+                        <div class="plan-price">$49<span>/mo</span></div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Access to all 320+ courses</li>
+                            <li><i class="fa-solid fa-check"></i> Verified certificates</li>
+                            <li><i class="fa-solid fa-check"></i> 1:1 mentor sessions</li>
+                            <li><i class="fa-solid fa-check"></i> Downloadable resources</li>
+                        </ul>
+                        <a href="pricing.html" class="btn btn-primary btn-block">Choose Professional</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+                    <div class="pricing-card card-surface h-100">
+                        <div class="plan-name">Institution</div>
+                        <div class="plan-price">Custom</div>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Team seats &amp; analytics</li>
+                            <li><i class="fa-solid fa-check"></i> Custom learning paths</li>
+                            <li><i class="fa-solid fa-check"></i> Dedicated account manager</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline btn-block">Contact sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="section-sm">
+        <div class="container-xl">
+            <div class="newsletter-box" data-aos="zoom-in">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h3>Get new courses in your inbox</h3>
+                        <p>Join 12,000+ subscribers receiving weekly learning notes from our editorial team.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form class="newsletter-form ms-lg-auto">
+                            <input type="email" placeholder="you@example.com" required aria-label="Email address">
+                            <button type="submit" class="btn btn-light">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+        <div class="container-xl">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a href="index.html" class="brand">
+                        <span class="brand-mark"><i class="fa-solid fa-book-open"></i></span>
+                        <span>SJC Publishers</span>
+                    </a>
+                    <p class="about">Bringing the rigor and craft of scholarly publishing to modern online learning, one
+                        chapter at a time.</p>
+                    <div class="social-row">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6>Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="instructors.html">Instructors</a></li>
+                        <li><a href="blog.html">Journal</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6>Courses</h6>
+                    <ul class="footer-links">
+                        <li><a href="courses.html">All Courses</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="certificates.html">Certificates</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6>Support</h6>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="login.html">Log In</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6>Newsletter</h6>
+                    <p class="about">Weekly notes from our editorial desk.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 SJC Publishers Company Limited. All rights reserved.</span>
+                <div class="d-flex gap-3">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <button class="scroll-top-btn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- Intro video modal -->
+    <div class="modal fade" id="introVideoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content" style="border-radius:var(--radius-lg); overflow:hidden; border:none;">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">How SJC Publishers works</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div
+                        class="ratio ratio-16x9 rounded-3 overflow-hidden bg-dark d-flex align-items-center justify-content-center">
+                        <span class="text-white-50">Video placeholder</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.4/swiper-bundle.min.js"></script>
+    <script>AOS.init({ duration: 700, once: true, offset: 60 });</script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
